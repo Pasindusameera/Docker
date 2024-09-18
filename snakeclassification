@@ -1,0 +1,12 @@
+Snake classification
+
+Docker file 
+•	FROM python:3.11.4-slim: Uses a slim version of Python 3.11.4 as the base image.
+•	WORKDIR /app: Sets /app as the working directory where commands will be run.
+•	COPY . .: Copies all files from the current directory on your machine to the /app directory in the container.
+•	RUN apt-get update: Updates the package list inside the container.
+•	RUN pip install --upgrade pip: Upgrades pip (Python's package installer).
+•	RUN pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cpu: Installs torch and torchvision using the PyTorch CPU version.
+•	COPY requirements.txt .: Copies the requirements.txt file to the container.
+•	RUN pip install -r requirements.txt: Installs Python dependencies listed in requirements.txt.
+•	CMD ["python", "app.py"]: Runs the Python app (app.py) when the container starts.
